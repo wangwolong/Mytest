@@ -19,7 +19,8 @@ namespace FirstWebDemo.Controllers
         }
         public ActionResult delete()
         {
-            return View();
+            string mgs = "删除成功！";
+            return View(mgs);
         }
     }
 }

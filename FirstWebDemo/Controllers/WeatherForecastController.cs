@@ -35,5 +35,9 @@ namespace FirstWebDemo.Controllers
             })
             .ToArray();
         }
+        public string  Index()
+        {
+            return "测试";
+        }
     }
 }

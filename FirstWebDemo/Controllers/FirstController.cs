@@ -14,8 +14,9 @@ namespace FirstWebDemo.Controllers
         }
         public ActionResult select()
         {
+            string ad = "测试";
             string mgs = "查询成功！";
-            return View(mgs);
+            return View(ad+mgs);
         }
         public ActionResult delete()
         {

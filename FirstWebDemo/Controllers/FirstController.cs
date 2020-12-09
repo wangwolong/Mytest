@@ -12,5 +12,9 @@ namespace FirstWebDemo.Controllers
         {
             return View();
         }
+        public ActionResult select()
+        {
+            return View();
+        }
     }
 }

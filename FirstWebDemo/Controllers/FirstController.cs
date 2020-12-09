@@ -16,5 +16,9 @@ namespace FirstWebDemo.Controllers
         {
             return View();
         }
+        public ActionResult delete()
+        {
+            return View();
+        }
     }
 }

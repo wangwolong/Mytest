@@ -10,7 +10,7 @@ namespace FirstWebDemo.Controllers
     {
         public IActionResult Index()
         {
-            //测试
+            //测试同步
             return View();
         }
     }

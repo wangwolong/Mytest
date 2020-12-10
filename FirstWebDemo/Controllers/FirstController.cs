@@ -24,5 +24,9 @@ namespace FirstWebDemo.Controllers
             return View(mgs);
         }
         //测试同步
+        public void Demo()
+        {
+            var sting = "测试同步";
+        }
     }
 }

@@ -11,5 +11,9 @@ namespace FirstDemo
             Console.WriteLine("diertiao");
             Console.WriteLine("二恶热");
         }
+        public class student
+        {
+            public int MyProperty { get; set; }
+        }
     }
 }

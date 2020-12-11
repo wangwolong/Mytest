@@ -6,6 +6,7 @@ namespace FirstDemo
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("7");
             Console.WriteLine("Hello World!");
         }
     }

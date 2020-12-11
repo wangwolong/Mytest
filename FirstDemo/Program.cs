@@ -14,5 +14,9 @@ namespace FirstDemo
         {
             public int MyProperty { get; set; }
         }
+        public  void sss(int id)
+        {
+
+        }
     }
 }

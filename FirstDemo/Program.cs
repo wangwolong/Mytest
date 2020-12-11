@@ -10,5 +10,9 @@ namespace FirstDemo
             Console.WriteLine("第一条");
             Console.WriteLine("diertiao");
         }
+        public class student
+        {
+            public int MyProperty { get; set; }
+        }
     }
 }

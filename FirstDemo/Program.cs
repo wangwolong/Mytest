@@ -8,6 +8,7 @@ namespace FirstDemo
         {
             Console.WriteLine("李四");
             Console.WriteLine("第一条");
+            Console.WriteLine("第五条");
         }
     }
 }

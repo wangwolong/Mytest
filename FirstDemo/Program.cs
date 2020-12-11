@@ -16,7 +16,7 @@ namespace FirstDemo
         }
         public  void sss(int id)
         {
-
+            string a = "Aaa";
         }
     }
 }

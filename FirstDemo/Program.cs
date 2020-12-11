@@ -9,7 +9,6 @@ namespace FirstDemo
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
         }
     }
 }

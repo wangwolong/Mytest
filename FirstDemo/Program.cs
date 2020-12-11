@@ -12,6 +12,7 @@ namespace FirstDemo
             Console.WriteLine("4");
             Console.WriteLine("5");
             Console.WriteLine("6");
+            Console.WriteLine("7");
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hello World!");

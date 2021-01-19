@@ -8,8 +8,12 @@ using static Common.WebEntity;
 
 namespace StatisticalAnalysis.Controllers.StatisticalAnalysis
 {
+
+    [ApiController]
+    [Route("[controller]")]
     public class ActivityController : Controller
     {
+        [HttpGet]
         public JsonR Index()
         {
             return Common.ComEnum.Code.A_操作失败.JsonR();

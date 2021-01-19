@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstDemo", "FirstDemo\FirstDemo.csproj", "{EC367A9E-6AC7-4DDC-9A25-B6CD13D1A98E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstDemo", "FirstDemo\FirstDemo.csproj", "{EC367A9E-6AC7-4DDC-9A25-B6CD13D1A98E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWebDemo", "FirstWebDemo\FirstWebDemo.csproj", "{5B6F74D0-58FA-4B02-9F30-E60981C0FE23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstWebDemo", "FirstWebDemo\FirstWebDemo.csproj", "{5B6F74D0-58FA-4B02-9F30-E60981C0FE23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticalAnalysis", "StatisticalAnalysis\StatisticalAnalysis.csproj", "{D2DA615C-3CA9-4121-9244-D094EE58DF14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5B6F74D0-58FA-4B02-9F30-E60981C0FE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B6F74D0-58FA-4B02-9F30-E60981C0FE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B6F74D0-58FA-4B02-9F30-E60981C0FE23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2DA615C-3CA9-4121-9244-D094EE58DF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2DA615C-3CA9-4121-9244-D094EE58DF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2DA615C-3CA9-4121-9244-D094EE58DF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2DA615C-3CA9-4121-9244-D094EE58DF14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

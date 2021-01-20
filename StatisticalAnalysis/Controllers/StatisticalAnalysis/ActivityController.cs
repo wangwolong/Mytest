@@ -16,7 +16,7 @@ namespace StatisticalAnalysis.Controllers.StatisticalAnalysis
         [HttpGet]
         public JsonR Index()
         {
-            return Common.ComEnum.Code.A_操作失败.JsonR();
+            return Common.ComEnum.Code.A_操作成功.JsonR();
         }
     }
 }

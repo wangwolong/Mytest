@@ -1,4 +1,5 @@
 ﻿using Common;
+using DB;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,13 @@ namespace StatisticalAnalysis.Controllers.StatisticalAnalysis
         public JsonR Index()
         {
             return Common.ComEnum.Code.A_操作成功.JsonR();
+        }
+        [HttpPost]
+        public JsonR Select(string tableName ,string where)
+        {
+            if (where == null) where = "1=1";
+            var sql = $"select * from {tableName } where {where}";
+            return Common.ComEnum.Code.A_操作成功.JsonR(DB.Config.Conn_Wathet.Select<DB.activity>(sql));
         }
     }
 }

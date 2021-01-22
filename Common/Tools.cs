@@ -7,7 +7,7 @@ namespace Common
 {
     public static class Tools
     {
-        #region //根据枚举返回对应的状态码
+        #region 根据枚举返回对应的状态码
         /// <summary>
         /// 根据枚举返回对应的状态码
         /// </summary>
@@ -50,6 +50,11 @@ namespace Common
             };
         }
 
+        #endregion
+
+        #region 转化byte数组 暂时用于加解密
+        public static byte[] ToBytes(this string data) { return ToBytes(data, Encoding.UTF8); }
+        public static byte[] ToBytes(this string data, Encoding encoding) { data = data ?? ""; return encoding.GetBytes(data); }
         #endregion
     }
 }

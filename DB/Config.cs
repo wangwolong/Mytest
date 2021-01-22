@@ -12,7 +12,7 @@ namespace DB
         /// </summary>
         public static SqlConnection Conn_Wathet
         {
-            get { return new SqlConnection() { ConnectionString = Common.ConfigurationManager.AppSettings["DBConnStr:SQLConnection:Wathet"] ?? "" }; }
+            get { return new SqlConnection() { ConnectionString = Common.DoEncrypt.Decrypt(Common.ConfigurationManager.AppSettings["DBConnStr:SQLConnection:Wathet"]) ?? "" }; }
         }
     }
 }

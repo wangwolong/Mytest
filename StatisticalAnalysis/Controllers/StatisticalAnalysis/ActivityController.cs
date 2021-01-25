@@ -33,5 +33,13 @@ namespace StatisticalAnalysis.Controllers.StatisticalAnalysis
         {
             return Common.ComEnum.Code.A_操作成功.JsonR(Common.DoEncrypt.Decrypt(Decrypt));
         }
+        [HttpGet]
+        public JsonR Export()
+        {
+            var model = DB.Config.Conn_Wathet.Select<DB.activity>("select * from t_xw_activity");
+            var data = DoExcel.CreateReturnBytes(model);
+            System.IO.File.WriteAllBytes("Download\\Excel\\activity.xls", data);
+            return Common.ComEnum.Code.A_操作成功.JsonR("Download\\Excel\\activity.xls");
+        }
     }
 }

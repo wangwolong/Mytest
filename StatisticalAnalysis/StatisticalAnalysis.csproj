@@ -15,4 +15,8 @@
     <ProjectReference Include="..\DB\DB.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Download\Excel\" />
+  </ItemGroup>
+
 </Project>

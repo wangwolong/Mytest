@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using static Common.WebEntity;
 
@@ -55,6 +56,78 @@ namespace Common
         #region 转化byte数组 暂时用于加解密
         public static byte[] ToBytes(this string data) { return ToBytes(data, Encoding.UTF8); }
         public static byte[] ToBytes(this string data, Encoding encoding) { data = data ?? ""; return encoding.GetBytes(data); }
+        #endregion
+
+        #region 获取Dt的所有列名
+        /// <summary>
+        /// 获取Dt的所有列名
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public static List<string> GetColumnNames(this DataTable dt)
+        {
+            var result = new List<string>();
+            dt = dt ?? new DataTable();
+            foreach (DataColumn col in dt.Columns)
+            {
+                result.Add(col.ColumnName.ToLower());
+            }
+            return result;
+        }
+        #endregion
+
+        #region list集合转化DataTable
+        /// <summary>
+        /// 转化一个DataTable
+        /// </summary>
+        /// <typeparam name="T">实体类型</typeparam>
+        /// <param name="list">实体集合</param>
+        /// <returns></returns>
+        public static DataTable ToDataTable<T>(this List<T> list)
+        {
+            //获得反射的入口
+            Type type = typeof(T);
+            var dt = new DataTable();
+            //把所有的public属性加入到集合 并添加DataTable的列
+            Array.ForEach(type.GetProperties(), p =>
+            {
+                if (p.PropertyType.IsClass && p.PropertyType != typeof(string))
+                {
+                    dt.Columns.Add(p.Name, typeof(string));
+                }
+                else if (p.PropertyType.UnderlyingSystemType.ToString() == "System.Nullable`1[System.DateTime]")
+                {
+                    dt.Columns.Add(p.Name, typeof(DateTime));
+                }
+                else
+                {
+                    dt.Columns.Add(p.Name, p.PropertyType);
+                }
+
+            });
+            foreach (var item in list)
+            {
+                //创建一个DataRow实例
+                DataRow row = dt.NewRow();
+                //给row 赋值
+                T o = item;
+                Array.ForEach(type.GetProperties(), p =>
+                {
+                    if (p.PropertyType.IsClass && p.PropertyType != typeof(string))
+                    {
+                        row[p.Name] = Newtonsoft.Json.JsonConvert.SerializeObject(p.GetValue(o, null));
+                    }
+                    else
+                    {
+                        row[p.Name] = p.GetValue(o, null);
+                    }
+                }
+                );
+                //加入到DataTable
+                dt.Rows.Add(row);
+            }
+            return dt;
+        }
         #endregion
     }
 }

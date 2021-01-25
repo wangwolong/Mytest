@@ -9,10 +9,7 @@ using static Common.WebEntity;
 
 namespace StatisticalAnalysis.Controllers.StatisticalAnalysis
 {
-
-    [ApiController]
-    [Route("[controller]")]
-    public class ActivityController : Controller
+    public class ActivityController : BaseController
     {
         [HttpGet]
         public JsonR Index()
@@ -26,12 +23,12 @@ namespace StatisticalAnalysis.Controllers.StatisticalAnalysis
             var sql = $"select * from {tableName } where {where}";
             return Common.ComEnum.Code.A_操作成功.JsonR(DB.Config.Conn_Wathet.Select<DB.activity>(sql));
         }
-        [HttpPut]
+        [HttpGet]
         public JsonR DoEncrypt(string encrypt)
         {
             return Common.ComEnum.Code.A_操作成功.JsonR(Common.DoEncrypt.Encrypt(encrypt));
         }
-        [HttpOptions]
+        [HttpGet]
         public JsonR DoDecrypt(string Decrypt)
         {
             return Common.ComEnum.Code.A_操作成功.JsonR(Common.DoEncrypt.Decrypt(Decrypt));

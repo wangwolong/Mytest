@@ -129,5 +129,10 @@ namespace Common
             return dt;
         }
         #endregion
+
+        public static string ToJson(this object obj)
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+        }
     }
 }
